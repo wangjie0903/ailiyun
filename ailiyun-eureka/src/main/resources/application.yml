@@ -1,0 +1,21 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: ailiyun-eureka
+
+#配置eureka
+eureka:
+  instance:
+    hostname: localhost #配置实例地址
+  client:
+    register-with-eureka: false  #阻止eureka自身项目注册到注册中心
+    fetch-registry: false #阻止eureka自身项目注册到注册中心
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+server:enable-self-preservation: false # 关闭自我保护机制 ， 默认为true开启
+
+logging:
+  level:
+    com.netflix: warn  #关闭打印日志

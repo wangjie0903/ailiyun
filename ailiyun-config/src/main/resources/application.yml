@@ -1,0 +1,20 @@
+server:
+  port: 9005
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: aiilyun-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wangjie0903/ailiyun.git
+          search-paths: /
+          username:
+          password:
+
